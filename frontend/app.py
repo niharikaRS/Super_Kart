@@ -4,7 +4,7 @@ import pandas as pd
 import requests
 
 # Base URL of the Flask backend
-BACKEND_URL = "http://backend:7860"
+BACKEND_URL = "http://host.docker.internal:7860"
 
 # ---------- Page setup ----------
 st.set_page_config(
