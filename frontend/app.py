@@ -4,7 +4,10 @@ import pandas as pd
 import requests
 
 # Base URL of the Flask backend
-BACKEND_URL = "http://backend:7860"
+BACKEND_URL = os.environ.get(
+    "BACKEND_URL",
+    "http://backend:7860"
+).rstrip("/")
 
 # Page title
 st.title("SuperKart System")
@@ -94,4 +97,4 @@ if uploaded_file is not None:
                 st.json(results)
 
         else:
-            st.error("Unable to connect to the prediction API.")
+            st.error(f"Prediction API returned HTTP {response.status_code}: "f"{response.text}")
