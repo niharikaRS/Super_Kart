@@ -1,13 +1,10 @@
-import os
+
 import streamlit as st
 import pandas as pd
 import requests
 
 # Base URL of the Flask backend
-BACKEND_URL = os.environ.get(
-    "BACKEND_URL",
-    "http://backend:7860"
-).rstrip("/")
+BACKEND_URL = "http://host.docker.internal:7860"
 
 # Page title
 st.title("SuperKart System")
